@@ -44,8 +44,8 @@ public class AppointmentManager {
     }
 
     /**
-     *
-     * @param id
+     * Returns a patient with the id passed to this method.
+     * @param id the id number of the patient to search for.
      * @return the matching patient with the specified id, or null if a matching patient does not exist.
      */
     public Patient getPatientById(int id) {
@@ -59,12 +59,18 @@ public class AppointmentManager {
 
     }
 
+    /**
+     * Returns a list of patients whose names match the name string parameter exactly. An empty list will be returned
+     * if no matches are found.
+     * @param name the name string to match exactly.
+     * @return a List of Patient objects whose names exactly match the name string.
+     */
     public List<Patient> getPatientsByName(String name) {
         List<Patient> matches = new ArrayList<Patient>();
 
         for (Patient patient : patients) {
             String patientName = patient.getName();
-            if ((patientName != null) && patientName.equals(name)) {
+            if (patientName != null && patientName.equals(name)) {
                 matches.add(patient);
             }
         }
@@ -72,11 +78,18 @@ public class AppointmentManager {
         return matches;
     }
 
+    /**
+     * Get all patients from the appointment manager.
+     * @return a List of all patients.
+     */
     public List<Patient> getPatients() {
         return patients;
     }
 
-
+    /**
+     * Get all appointments from the appointment manager.
+     * @return a List of all appointments from the manager instance.
+     */
     public List<Appointment> getAppointments() {
         return appointments;
     }

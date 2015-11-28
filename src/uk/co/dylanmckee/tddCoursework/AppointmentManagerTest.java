@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -43,6 +44,27 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
     public void testConstructor() {
         // Check the appointment manager has been constructed...
         assertNotNull(testAppointmentManager);
+
+    }
+
+    /**
+     * A test to ensure that no data is persisted by the appointment manager.
+     */
+    @Test
+    public void testNoDataPersisted() {
+        // Ensure no persisted appointments exist...
+        List<Appointment> appointments = testAppointmentManager.getAppointments();
+
+        int appointmentCount = appointments.size();
+
+        assertEquals(0, appointmentCount);
+
+        // And ensure no persisted patients exist...
+        List<Patient> patients = testAppointmentManager.getPatients();
+
+        int patientCount = patients.size();
+
+        assertEquals(0, patientCount);
 
     }
 
@@ -200,6 +222,50 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
         }
 
         assertTrue(appointmentAdded);
+
+    }
+
+    /**
+     * A test to ensure a full list of patients can be retrieved from the appointment manager.
+     */
+    @Test
+    public void testPatientsList() {
+        final int numberOfTestPatients = 10;
+
+        // Create a local list of patients...
+        List<Patient> localPatients = new ArrayList<Patient>();
+
+        for (int i = 0; i < numberOfTestPatients; i++) {
+            Patient mockPatient = new Patient(i);
+            mockPatient.setName("Patient " + i);
+            mockPatient.setAddress(i + " Northumberland Street");
+            mockPatient.setTelephoneNumber("080000106" + i);
+            mockPatient.setDob(new Date());
+
+            Appointment mockAppointment = new Appointment();
+            mockAppointment.setDescription("Appointment" + i);
+            mockAppointment.setDate(new Date());
+            mockAppointment.setPatient(mockPatient);
+
+            mockPatient.addPastAppointment(mockAppointment);
+
+            testAppointmentManager.addPatient(mockPatient);
+        }
+
+
+        List<Patient> managerPatients = testAppointmentManager.getPatients();
+
+        // Set up a flag
+        boolean containsAllPatients = true;
+
+        for (Patient patient : localPatients) {
+            // Ensure EVERY test patient we created has been returned to us...
+            if (!managerPatients.contains(patient)) {
+                containsAllPatients = false;
+            }
+        }
+
+        assertTrue(containsAllPatients);
 
     }
 

@@ -10,6 +10,7 @@ import java.util.List;
  * Author: Dylan McKee
  * Date: 26/11/2015
  */
+@SuppressWarnings("UnclearExpression")
 public class Patient {
     /**
      * The id of the patient, to be passed and set only once in the constructor.
@@ -154,31 +155,31 @@ public class Patient {
         int hashcode = 17;
 
         //multiply the prime by the hashcode (a prime to begin with too), then add patient ID...
-        hashcode = prime * hashcode + id;
+        hashcode = (prime * hashcode) + id;
 
         //now multiply the prime by the hashcode again and add on the address' hashcode...
         if (name != null) {
-            hashcode = prime * hashcode + name.hashCode();
+            hashcode = (prime * hashcode) + name.hashCode();
         }
 
         //now multiply the prime by the hashcode again and add on the address' hashcode...
         if (address != null) {
-            hashcode = prime * hashcode + address.hashCode();
+            hashcode = (prime * hashcode) + address.hashCode();
         }
 
         //now multiply the prime by the hashcode again and add on the telephone number's hashcode...
         if (telephoneNumber != null) {
-            hashcode = prime * hashcode + telephoneNumber.hashCode();
+            hashcode = (prime * hashcode) + telephoneNumber.hashCode();
         }
 
         //now multiply the prime by the hashcode again and add on the DoB's hashcode...
         if (dob != null) {
-            hashcode = prime * hashcode + dob.hashCode();
+            hashcode = (prime * hashcode) + dob.hashCode();
         }
 
         //now multiply the prime by the hashcode again and add on the past appointment array's hashcode...
         if (pastAppointmentList != null) {
-            hashcode = prime * hashcode + pastAppointmentList.hashCode();
+            hashcode = (prime * hashcode) + pastAppointmentList.hashCode();
         }
 
         //and finally return our hashcode
