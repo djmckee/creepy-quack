@@ -2,12 +2,29 @@ package uk.co.dylanmckee.tddCoursework;
 
 import java.util.Date;
 
+/**
+ * Purpose: A simple model class to model an Appointment.
+ * Author: Dylan McKee
+ * Date: 26/11/2015
+ */
 public class Appointment {
+    /**
+     * The date/time of the appointment; stored as a Java Date object
+     */
     private Date date;
+
+    /**
+     * A human readable description string.
+     */
     private String description;
+
+    /**
+     * A reference to the patient attending the appointment.
+     */
     private Patient patient;
 
     /**
+     * Gets the appointment date.
      * @return the date
      */
     public Date getDate() {
@@ -16,6 +33,7 @@ public class Appointment {
     }
 
     /**
+     * Sets the appointment date.
      * @param date the date to set
      */
     public void setDate(Date date) {
@@ -24,6 +42,7 @@ public class Appointment {
     }
 
     /**
+     * Gets the human-readable description.
      * @return the description
      */
     public String getDescription() {
@@ -32,6 +51,7 @@ public class Appointment {
     }
 
     /**
+     * Sets the human-readable description.
      * @param description the description to set
      */
     public void setDescription(String description) {
@@ -40,6 +60,7 @@ public class Appointment {
     }
 
     /**
+     * Gets the patient reference.
      * @return the patient
      */
     public Patient getPatient() {
@@ -48,6 +69,7 @@ public class Appointment {
     }
 
     /**
+     * Sets the patient reference for the appointment.
      * @param patient the patient to set
      */
     public void setPatient(Patient patient) {

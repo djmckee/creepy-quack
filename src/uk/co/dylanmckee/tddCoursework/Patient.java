@@ -4,26 +4,54 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Patient {
-    private final int id;
-    private String name;
-    private String address;
-    private String telephoneNumber;
-    private Date dob;
-    private final List<Appointment> pastAppointmentList;
 
+/**
+ * Purpose: A simple model class to model a Patient.
+ * Author: Dylan McKee
+ * Date: 26/11/2015
+ */
+public class Patient {
+    /**
+     * The id of the patient, to be passed and set only once in the constructor.
+     */
+    private final int id;
+
+    /**
+     * The full name of the patient, as a string.
+     */
+    private String name;
+
+    /**
+     * The street address of the patient, as a string.
+     */
+    private String address;
+
+    /**
+     * The telephone number of the patient, stored as a string.
+     */
+    private String telephoneNumber;
+
+    /**
+     * The patient's date of birth, stored as a Java Date object.
+     */
+    private Date dob;
+
+    /**
+     * A list of past appointments (Appointment objects) for the patient.
+     */
+    private final List<Appointment> pastAppointmentList  = new ArrayList<Appointment>();
+
+    /**
+     * The constructor accepts a patient id and constructs a new Patient instance.
+     * @param id the id of the patient, as an integer.
+     */
     public Patient(int id) {
         // Set the id to whatever we've been passed
         this.id = id;
 
-        // Instantiate the past appointment list
-        pastAppointmentList = new ArrayList<Appointment>();
-
     }
 
     /**
-     * Get the ID number of the patient.
-     *
      * @return the id number
      */
     public int getId() {
