@@ -105,8 +105,6 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	
 	@Test
 	public void testPastAppointmentListInsertionAndRetrival() {
-        fail("Not yet implemented");
-
         // Create a new appointment...
 		Appointment pastAppointment = new Appointment();
 		pastAppointment.setDate(new Date());
@@ -124,5 +122,25 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 		
 		
 	}
+
+    @Test
+    public void testEquals() {
+        // Seed the current patient with test data
+        testPatient.setName(TEST_NAME);
+        testPatient.setAddress(TEST_ADDRESS);
+        testPatient.setTelephoneNumber(TEST_PHONE);
+        testPatient.setDob(TEST_DOB);
+
+        // Create a patient with equal fields to test equality with...
+        Patient otherPatient = new Patient(TEST_PATIENT_ID);
+        otherPatient.setName(TEST_NAME);
+        otherPatient.setAddress(TEST_ADDRESS);
+        otherPatient.setTelephoneNumber(TEST_PHONE);
+        otherPatient.setDob(TEST_DOB);
+
+        // Check they're equal...
+        assertEquals(testPatient, otherPatient);
+
+    }
 	
 }
