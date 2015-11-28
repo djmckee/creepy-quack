@@ -1,4 +1,4 @@
-package com.example.tddCoursework;
+package uk.co.dylanmckee.tddCoursework;
 
 import java.util.Date;
 

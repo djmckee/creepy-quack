@@ -1,4 +1,4 @@
-package com.example.tddCoursework;
+package uk.co.dylanmckee.tddCoursework;
 
 import static org.junit.Assert.*;
 
@@ -7,7 +7,6 @@ import java.util.Date;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
 public class AppointmentTest extends AbstractLoggingJUnitTest {
 	// A private instance of the Appointment to test with; to be constructed before each test in setUp, and destroyed after each test in tearDown
