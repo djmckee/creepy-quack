@@ -40,8 +40,6 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
 	
 	@Test
 	public void testDescriptionSetAndGet() {
-		fail("Not yet implemented");
-
 		// Set the appointment description...
 		testAppointment.setDescription(TEST_DESCRIPTION);
 				
@@ -55,8 +53,6 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
 
 	@Test
 	public void testDateSetAndGet() {
-		fail("Not yet implemented");
-
 		// Set the appointment date...
 		testAppointment.setDate(TEST_DATE);
 						
@@ -70,8 +66,6 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
 
 	@Test
 	public void testPatientSetAndGet() {
-		fail("Not yet implemented");
-
 		// Set the appointment's associated patient...
 		testAppointment.setPatient(TEST_PATIENT);
 						

@@ -40,6 +40,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	public void testConstructor() {
 		// Ensure the test object was created correctly...
 		assertNotNull(testPatient);
+
 	}
 	
 	@Test
@@ -64,7 +65,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	
 	@Test
 	public void testAddressSetAndGet() {
-		// Set the address...
+        // Set the address...
 		testPatient.setAddress(TEST_ADDRESS);
 				
 		// Get the address...
@@ -77,7 +78,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	
 	@Test
 	public void testPhoneNumberSetAndGet() {
-		// Set the phone number...
+        fail("Not yet implemented");
+
+        // Set the phone number...
 		testPatient.setTelephoneNumber(TEST_PHONE);
 
 		// Get the phone number...
@@ -91,7 +94,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 
 	@Test
 	public void testDobSetAndGet() {
-		// Set the dob...
+        fail("Not yet implemented");
+
+        // Set the dob...
 		testPatient.setDob(TEST_DOB);
 
 		// Get the dob...
@@ -104,7 +109,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	
 	@Test
 	public void testPastAppointmentListInsertionAndRetrival() {
-		// Create a new appointment...
+        fail("Not yet implemented");
+
+        // Create a new appointment...
 		Appointment pastAppointment = new Appointment();
 		pastAppointment.setDate(new Date());
 		
