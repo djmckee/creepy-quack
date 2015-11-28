@@ -3,57 +3,57 @@ package uk.co.dylanmckee.tddCoursework;
 import java.util.Date;
 
 public class Appointment {
-	private Date date;
-	private String description;
-	private Patient patient;
-	
-	/**
-	 * @return the date
-	 */
-	public Date getDate() {
-		return date;
-		
-	}
-	
-	/**
-	 * @param date the date to set
-	 */
-	public void setDate(Date date) {
-		this.date = date;
-		
-	}
-	
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-		
-	}
-	
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-		
-	}
-	
-	/**
-	 * @return the patient
-	 */
-	public Patient getPatient() {
-		return patient;
-		
-	}
-	
-	/**
-	 * @param patient the patient to set
-	 */
-	public void setPatient(Patient patient) {
-		this.patient = patient;
-		
-	}
+    private Date date;
+    private String description;
+    private Patient patient;
+
+    /**
+     * @return the date
+     */
+    public Date getDate() {
+        return date;
+
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(Date date) {
+        this.date = date;
+
+    }
+
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
+
+    }
+
+    /**
+     * @return the patient
+     */
+    public Patient getPatient() {
+        return patient;
+
+    }
+
+    /**
+     * @param patient the patient to set
+     */
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+
+    }
 
     /**
      * Overriding the hashcode to add date, description and patient fields to it.
@@ -113,7 +113,7 @@ public class Appointment {
         Appointment otherAppointment = (Appointment) o;
 
         //use the overridden hashCode method of Appointment to check for field value equality...
-        if (this.hashCode() == otherAppointment.hashCode()) {
+        if (hashCode() == otherAppointment.hashCode()) {
             //definitely equal then...
             return true;
         }
