@@ -45,7 +45,7 @@ public class Patient {
      * The constructor accepts a patient id and constructs a new Patient instance.
      * @param id the id of the patient, as an integer.
      */
-    public Patient(final int id) {
+    public Patient(int id) {
         // Set the id to whatever we've been passed
         this.id = id;
 
@@ -71,7 +71,7 @@ public class Patient {
      * Set the patient's full name
      * @param name the name to set
      */
-    public void setName(final String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -87,7 +87,7 @@ public class Patient {
      * Set the patient's street address
      * @param address the address to set
      */
-    public void setAddress(final String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -103,7 +103,7 @@ public class Patient {
      * Set the patient's phone number
      * @param telephoneNumber the telephoneNumber to set
      */
-    public void setTelephoneNumber(final String telephoneNumber) {
+    public void setTelephoneNumber(String telephoneNumber) {
         this.telephoneNumber = telephoneNumber;
     }
 
@@ -119,7 +119,7 @@ public class Patient {
      * Set the patient's date of birth
      * @param dob - the new DoB
      */
-    public void setDob(final Date dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
@@ -135,7 +135,7 @@ public class Patient {
      * Adds a past appointment to the list of past appointments for the patient.
      * @param pastAppointment the pastAppointment to add to the list
      */
-    public void addPastAppointment(final Appointment pastAppointment) {
+    public void addPastAppointment(Appointment pastAppointment) {
         pastAppointmentList.add(pastAppointment);
 
     }
@@ -148,7 +148,7 @@ public class Patient {
     @Override
     public int hashCode() {
         //pick a prime number to multiply all of the fields by
-        final int prime = 31;
+        int prime = 31;
 
         //declare the hashcode, set it equal to a prime number
         int hashcode = 17;
@@ -196,7 +196,7 @@ public class Patient {
      * @return a boolean which will be true if the objects are equal, and false otherwise.
      */
     @Override
-    public boolean equals(final Object o) {
+    public boolean equals(Object o) {
         //firstly, if the memory addresses are entirely equal, then obviously return yes...
         if (this == o) {
             return true;
@@ -214,7 +214,7 @@ public class Patient {
         }
 
         //okay, now let's cast object to a Patient, and check its fields...
-        final Patient otherPatient = (Patient) o;
+        Patient otherPatient = (Patient) o;
 
         //use the overridden hashCode method of Appointment to check for field value equality...
         if (hashCode() == otherPatient.hashCode()) {

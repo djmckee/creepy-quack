@@ -36,7 +36,7 @@ public class Appointment {
      * Sets the appointment date.
      * @param date the date to set
      */
-    public void setDate(final Date date) {
+    public void setDate(Date date) {
         this.date = date;
 
     }
@@ -54,7 +54,7 @@ public class Appointment {
      * Sets the human-readable description.
      * @param description the description to set
      */
-    public void setDescription(final String description) {
+    public void setDescription(String description) {
         this.description = description;
 
     }
@@ -72,7 +72,7 @@ public class Appointment {
      * Sets the patient reference for the appointment.
      * @param patient the patient to set
      */
-    public void setPatient(final Patient patient) {
+    public void setPatient(Patient patient) {
         this.patient = patient;
 
     }
@@ -85,7 +85,7 @@ public class Appointment {
     @Override
     public int hashCode() {
         //pick a prime number to multiply all of the fields by
-        final int prime = 31;
+        int prime = 31;
 
         //declare the hashcode, set it equal to a prime number
         int hashcode = 17;
@@ -120,7 +120,7 @@ public class Appointment {
      * @return a boolean which will be true if the objects are equal, and false otherwise.
      */
     @Override
-    public boolean equals(final Object o) {
+    public boolean equals(Object o) {
         //firstly, if the memory addresses are entirely equal, then obviously return yes...
         if (this == o) {
             return true;
@@ -138,7 +138,7 @@ public class Appointment {
         }
 
         //okay, now let's cast object to a Appointment, and check its fields...
-        final Appointment otherAppointment = (Appointment) o;
+        Appointment otherAppointment = (Appointment) o;
 
         //use the overridden hashCode method of Appointment to check for field value equality...
         if (hashCode() == otherAppointment.hashCode()) {

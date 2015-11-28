@@ -53,7 +53,7 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
     @Test
     public void testCreateMultipleAppointmentManagers() {
         // Create a 2nd AppointmentManager instance, then ensure that the two aren't the same...
-        final AppointmentManager anotherAppointmentManager = new AppointmentManager();
+        AppointmentManager anotherAppointmentManager = new AppointmentManager();
 
         // Check they're not the same object reference, meaning that multiple unique instances can co-exist
         assertNotSame(testAppointmentManager, anotherAppointmentManager);
@@ -67,25 +67,25 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
      */
     @Test
     public void testPatientListInsertionAndRetrieval() {
-        final Patient testPatient = new Patient(TEST_PATIENT_ID);
+        Patient testPatient = new Patient(TEST_PATIENT_ID);
 
         // Insert patient...
         testAppointmentManager.addPatient(testPatient);
 
         // Retrieve patient by ID...
-        final Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+        Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
 
         // Ensure the match is the patient we added...
         assertEquals(testPatient, match);
 
         // Now, do a simple edge case test - ensure that a duplicate patient ID cannot exist...
-        final Patient otherTestPatient = new Patient(TEST_PATIENT_ID);
+        Patient otherTestPatient = new Patient(TEST_PATIENT_ID);
 
         boolean correctExceptionRaised = false;
 
         try {
             testAppointmentManager.addPatient(otherTestPatient);
-        } catch (final IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             // The illegal argument exception being thrown shows that our duplicate checking code works as expected.
             correctExceptionRaised = true;
         }
@@ -99,15 +99,15 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
      */
     @Test
     public void testPatientListSearchByName() {
-        final Patient testPatient = new Patient(TEST_PATIENT_ID);
+        Patient testPatient = new Patient(TEST_PATIENT_ID);
         testPatient.setName(TEST_PATIENT_NAME);
 
         // Insert patient...
         testAppointmentManager.addPatient(testPatient);
 
         // Retrieve patient by name... (should be the first and only object in the list)
-        final List<Patient> patientsWithName = testAppointmentManager.getPatientsByName(TEST_PATIENT_NAME);
-        final Patient match = patientsWithName.get(0);
+        List<Patient> patientsWithName = testAppointmentManager.getPatientsByName(TEST_PATIENT_NAME);
+        Patient match = patientsWithName.get(0);
 
         // Ensure the match is the patient we added...
         assertEquals(testPatient, match);
@@ -118,22 +118,22 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
      */
     @Test
     public void testPatientNameChange() {
-        final Patient testPatient = new Patient(TEST_PATIENT_ID);
+        Patient testPatient = new Patient(TEST_PATIENT_ID);
         testPatient.setName(TEST_PATIENT_NAME);
 
-        final String newPatientName = "John Tester-McTest";
+        String newPatientName = "John Tester-McTest";
 
         // Insert patient...
         testAppointmentManager.addPatient(testPatient);
 
         // Retrieve patient by id...
-        final Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+        Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
 
         // Change the name...
         match.setName(newPatientName);
 
         // Retrieve patient again...
-        final Patient matchAgain = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+        Patient matchAgain = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
 
         String name = matchAgain.getName();
 
@@ -147,22 +147,22 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
      */
     @Test
     public void testPatientAddressChange() {
-        final Patient testPatient = new Patient(TEST_PATIENT_ID);
+        Patient testPatient = new Patient(TEST_PATIENT_ID);
         testPatient.setAddress("Claremont Tower, Newcastle-upon-Tyne");
 
-        final String newPatientAddress = "1 Infinite Loop, Cupertino, CA";
+        String newPatientAddress = "1 Infinite Loop, Cupertino, CA";
 
         // Insert patient...
         testAppointmentManager.addPatient(testPatient);
 
         // Retrieve patient by id...
-        final Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+        Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
 
         // Change the name...
         match.setAddress(newPatientAddress);
 
         // Retrieve patient again...
-        final Patient matchAgain = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+        Patient matchAgain = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
 
         String address = matchAgain.getAddress();
 
@@ -177,11 +177,11 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
     @Test
     public void testAddNewAppointment() {
         // Create a test appointment with test patient associated with it.
-        final Appointment appointment = new Appointment();
+        Appointment appointment = new Appointment();
         appointment.setDate(new Date());
         appointment.setDescription("A test!");
 
-        final Patient patient = new Patient(TEST_PATIENT_ID);
+        Patient patient = new Patient(TEST_PATIENT_ID);
         patient.setName(TEST_PATIENT_NAME);
         appointment.setPatient(patient);
 
@@ -189,11 +189,11 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
         testAppointmentManager.addAppointment(appointment);
 
         // Get the appointment list, ensure it's in there...
-        final List<Appointment> appointmentList = testAppointmentManager.getAppointments();
+        List<Appointment> appointmentList = testAppointmentManager.getAppointments();
 
         boolean appointmentAdded = false;
 
-        for (final Appointment a : appointmentList) {
+        for (Appointment a : appointmentList) {
             if (a.equals(appointment)) {
                 appointmentAdded = true;
             }

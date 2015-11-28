@@ -24,7 +24,7 @@ public class AppointmentManager {
      * Adds a patient to the patients list; after checking the ID is unique.
      * @param patient the patient to add to the patients list.
      */
-    public void addPatient(final Patient patient) {
+    public void addPatient(Patient patient) {
         int id = patient.getId();
         if (getPatientById(id) != null) {
             // Patient already exists!
@@ -39,7 +39,7 @@ public class AppointmentManager {
      * Adds the appointment to the appointments list.
      * @param appointment the appointment to add to the appointments list.
      */
-    public void addAppointment(final Appointment appointment) {
+    public void addAppointment(Appointment appointment) {
         appointments.add(appointment);
     }
 
@@ -48,8 +48,8 @@ public class AppointmentManager {
      * @param id
      * @return the matching patient with the specified id, or null if a matching patient does not exist.
      */
-    public Patient getPatientById(final int id) {
-        for (final Patient patient : patients) {
+    public Patient getPatientById(int id) {
+        for (Patient patient : patients) {
             if (patient.getId() == id) {
                 return patient;
             }
@@ -59,10 +59,10 @@ public class AppointmentManager {
 
     }
 
-    public List<Patient> getPatientsByName(final String name) {
-        final List<Patient> matches = new ArrayList<Patient>();
+    public List<Patient> getPatientsByName(String name) {
+        List<Patient> matches = new ArrayList<Patient>();
 
-        for (final Patient patient : patients) {
+        for (Patient patient : patients) {
             String patientName = patient.getName();
             if ((patientName != null) && patientName.equals(name)) {
                 matches.add(patient);

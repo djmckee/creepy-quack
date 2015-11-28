@@ -74,7 +74,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
         testPatient.setName(TEST_NAME);
 
         // Get the name...
-        final String name = testPatient.getName();
+        String name = testPatient.getName();
 
         // Check equality
         assertEquals(TEST_NAME, name);
@@ -89,7 +89,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
         testPatient.setAddress(TEST_ADDRESS);
 
         // Get the address...
-        final String address = testPatient.getAddress();
+        String address = testPatient.getAddress();
 
         // Check equality
         assertEquals(TEST_ADDRESS, address);
@@ -105,7 +105,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
         testPatient.setTelephoneNumber(TEST_PHONE);
 
         // Get the phone number...
-        final String phoneNumber = testPatient.getTelephoneNumber();
+        String phoneNumber = testPatient.getTelephoneNumber();
 
         // Check equality
         assertEquals(TEST_PHONE, phoneNumber);
@@ -122,7 +122,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
         testPatient.setDob(TEST_DOB);
 
         // Get the dob...
-        final Date dob = testPatient.getDob();
+        Date dob = testPatient.getDob();
 
         // Check equality
         assertEquals(TEST_DOB, dob);
@@ -136,16 +136,16 @@ public class PatientTest extends AbstractLoggingJUnitTest {
     @Test
     public void testPastAppointmentListInsertionAndRetrieval() {
         // Create a new appointment...
-        final Appointment pastAppointment = new Appointment();
+        Appointment pastAppointment = new Appointment();
         pastAppointment.setDate(new Date());
 
         // Add it to the list...
         testPatient.addPastAppointment(pastAppointment);
 
         // Ensure the list contains the added past appointment...
-        final List<Appointment> appointments = testPatient.getPastAppointments();
+        List<Appointment> appointments = testPatient.getPastAppointments();
 
-        final boolean containsPastAppointment = appointments.contains(pastAppointment);
+        boolean containsPastAppointment = appointments.contains(pastAppointment);
 
         // Flag bool will be set if the list contains said object.
         assertTrue(containsPastAppointment);
@@ -165,7 +165,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
         testPatient.setDob(TEST_DOB);
 
         // Create a patient with equal fields to test equality with...
-        final Patient otherPatient = new Patient(TEST_PATIENT_ID);
+        Patient otherPatient = new Patient(TEST_PATIENT_ID);
         otherPatient.setName(TEST_NAME);
         otherPatient.setAddress(TEST_ADDRESS);
         otherPatient.setTelephoneNumber(TEST_PHONE);
