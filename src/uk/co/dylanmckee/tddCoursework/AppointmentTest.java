@@ -37,6 +37,9 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensure the Appointment constructor correctly instantiates a new appointment.
+     */
     @Test
     public void testConstructor() {
         // Ensure the test Appointment instance exists and was constructed properly...
@@ -44,6 +47,9 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensure the appointment description can be set and retrieved.
+     */
     @Test
     public void testDescriptionSetAndGet() {
         // Set the appointment description...
@@ -57,6 +63,9 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensure the appointment date can be set and retrieved.
+     */
     @Test
     public void testDateSetAndGet() {
         // Set the appointment date...
@@ -70,6 +79,9 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensure the patient reference for the appointment can be set and retrieved.
+     */
     @Test
     public void testPatientSetAndGet() {
         // Set the appointment's associated patient...
@@ -78,11 +90,14 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
         // Get the appointment's associated patient...
         Patient thePatient = testAppointment.getPatient();
 
-        // Check memory reference is the same (they should be the same instance and therefore memory address - because we're using the same TEST_PATIENT instance!)
-        assertSame(TEST_PATIENT, thePatient);
+        // Check that the patient is equal...
+        assertEquals(TEST_PATIENT, thePatient);
 
     }
 
+    /**
+     * Ensure that two Appointment instances with identical fields are marked as being equal to each other.
+     */
     @Test
     public void testEquals() {
         // Set some test values for the test appointment instance, to compare to...

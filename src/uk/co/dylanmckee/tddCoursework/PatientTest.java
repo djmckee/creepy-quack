@@ -43,6 +43,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensure the Patient constructor correctly instantiates a new patient object.
+     */
     @Test
     public void testConstructor() {
         // Ensure the test object was created correctly...
@@ -50,6 +53,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensures that the patient ID is set correctly.
+     */
     @Test
     public void testIdGet() {
         // Ensure the test ID equals the constant we intend it to...
@@ -58,6 +64,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
     }
 
 
+    /**
+     * Ensures that patient name can be set and retrieved correctly.
+     */
     @Test
     public void testNameSetAndGet() {
         // Set the name...
@@ -70,6 +79,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
         assertEquals(TEST_NAME, name);
     }
 
+    /**
+     * Ensures patient address can be set and retrieved correctly.
+     */
     @Test
     public void testAddressSetAndGet() {
         // Set the address...
@@ -83,6 +95,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensures patient telephone number can be set and retrieved correctly.
+     */
     @Test
     public void testPhoneNumberSetAndGet() {
         // Set the phone number...
@@ -97,6 +112,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensures the patient date of birth can be set and retrieved correctly.
+     */
     @Test
     public void testDobSetAndGet() {
         // Set the dob...
@@ -110,6 +128,10 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensures past appointments can be added to the patient's list of past appointments,
+     * and retrieved back from it correctly
+     */
     @Test
     public void testPastAppointmentListInsertionAndRetrival() {
         // Create a new appointment...
@@ -130,6 +152,9 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 
     }
 
+    /**
+     * Ensures that two patient objects with identical field values are known to be equal.
+     */
     @Test
     public void testEquals() {
         // Seed the current patient with test data

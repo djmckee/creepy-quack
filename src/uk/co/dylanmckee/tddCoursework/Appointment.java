@@ -91,13 +91,13 @@ public class Appointment {
         int hashcode = 17;
 
         //multiply the prime by the hashcode (a prime to begin with too), then add the description's hashcode...
-        hashcode = prime * hashcode + description.hashCode();
+        if (description != null) hashcode = prime * hashcode + description.hashCode();
 
         //now multiply the prime by the hashcode again and add on the date's hashcode...
-        hashcode = prime * hashcode + patient.hashCode();
+        if (patient != null) hashcode = prime * hashcode + patient.hashCode();
 
         //now multiply the prime by the hashcode again and add on the date's hashcode...
-        hashcode = prime * hashcode + date.hashCode();
+        if (date != null) hashcode = prime * hashcode + date.hashCode();
 
         //and finally return our hashcode
         return hashcode;

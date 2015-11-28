@@ -52,6 +52,7 @@ public class Patient {
     }
 
     /**
+     * Get the patient ID (no setter as this field is final & immutable)
      * @return the id number
      */
     public int getId() {
@@ -59,6 +60,7 @@ public class Patient {
     }
 
     /**
+     * Get the patient's full name
      * @return the name
      */
     public String getName() {
@@ -66,6 +68,7 @@ public class Patient {
     }
 
     /**
+     * Set the patient's full name
      * @param name the name to set
      */
     public void setName(String name) {
@@ -73,6 +76,7 @@ public class Patient {
     }
 
     /**
+     * Get the patient's street address
      * @return the address
      */
     public String getAddress() {
@@ -80,6 +84,7 @@ public class Patient {
     }
 
     /**
+     * Set the patient's street address
      * @param address the address to set
      */
     public void setAddress(String address) {
@@ -87,6 +92,7 @@ public class Patient {
     }
 
     /**
+     * Get the patient's phone number
      * @return the telephoneNumber
      */
     public String getTelephoneNumber() {
@@ -94,6 +100,7 @@ public class Patient {
     }
 
     /**
+     * Set the patient's phone number
      * @param telephoneNumber the telephoneNumber to set
      */
     public void setTelephoneNumber(String telephoneNumber) {
@@ -101,6 +108,7 @@ public class Patient {
     }
 
     /**
+     * Get the patient's date of birth
      * @return return the DoB
      */
     public Date getDob() {
@@ -108,6 +116,7 @@ public class Patient {
     }
 
     /**
+     * Set the patient's date of birth
      * @param dob - the new DoB
      */
     public void setDob(Date dob) {
@@ -115,6 +124,7 @@ public class Patient {
     }
 
     /**
+     * Returns a list of past appointments attended by this patient.
      * @return the pastAppointmentList
      */
     public List<Appointment> getPastAppointments() {
@@ -122,6 +132,7 @@ public class Patient {
     }
 
     /**
+     * Adds a past appointment to the list of past appointments for the patient.
      * @param pastAppointment the pastAppointment to add to the list
      */
     public void addPastAppointment(Appointment pastAppointment) {
@@ -146,19 +157,19 @@ public class Patient {
         hashcode = prime * hashcode + id;
 
         //now multiply the prime by the hashcode again and add on the address' hashcode...
-        hashcode = prime * hashcode + name.hashCode();
+        if (name != null) hashcode = prime * hashcode + name.hashCode();
 
         //now multiply the prime by the hashcode again and add on the address' hashcode...
-        hashcode = prime * hashcode + address.hashCode();
+        if (address != null) hashcode = prime * hashcode + address.hashCode();
 
         //now multiply the prime by the hashcode again and add on the telephone number's hashcode...
-        hashcode = prime * hashcode + telephoneNumber.hashCode();
+        if (telephoneNumber != null) hashcode = prime * hashcode + telephoneNumber.hashCode();
 
         //now multiply the prime by the hashcode again and add on the DoB's hashcode...
-        hashcode = prime * hashcode + dob.hashCode();
+        if (dob != null) hashcode = prime * hashcode + dob.hashCode();
 
         //now multiply the prime by the hashcode again and add on the past appointment array's hashcode...
-        hashcode = prime * hashcode + pastAppointmentList.hashCode();
+        if (pastAppointmentList != null) hashcode = prime * hashcode + pastAppointmentList.hashCode();
 
         //and finally return our hashcode
         return hashcode;
