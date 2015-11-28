@@ -36,7 +36,7 @@ public class Appointment {
      * Sets the appointment date.
      * @param date the date to set
      */
-    public void setDate(Date date) {
+    public void setDate(final Date date) {
         this.date = date;
 
     }
@@ -54,7 +54,7 @@ public class Appointment {
      * Sets the human-readable description.
      * @param description the description to set
      */
-    public void setDescription(String description) {
+    public void setDescription(final String description) {
         this.description = description;
 
     }
@@ -72,7 +72,7 @@ public class Appointment {
      * Sets the patient reference for the appointment.
      * @param patient the patient to set
      */
-    public void setPatient(Patient patient) {
+    public void setPatient(final Patient patient) {
         this.patient = patient;
 
     }
@@ -85,19 +85,25 @@ public class Appointment {
     @Override
     public int hashCode() {
         //pick a prime number to multiply all of the fields by
-        int prime = 31;
+        final int prime = 31;
 
         //declare the hashcode, set it equal to a prime number
         int hashcode = 17;
 
         //multiply the prime by the hashcode (a prime to begin with too), then add the description's hashcode...
-        if (description != null) hashcode = prime * hashcode + description.hashCode();
+        if (description != null) {
+            hashcode = prime * hashcode + description.hashCode();
+        }
 
         //now multiply the prime by the hashcode again and add on the date's hashcode...
-        if (patient != null) hashcode = prime * hashcode + patient.hashCode();
+        if (patient != null) {
+            hashcode = prime * hashcode + patient.hashCode();
+        }
 
         //now multiply the prime by the hashcode again and add on the date's hashcode...
-        if (date != null) hashcode = prime * hashcode + date.hashCode();
+        if (date != null) {
+            hashcode = prime * hashcode + date.hashCode();
+        }
 
         //and finally return our hashcode
         return hashcode;
@@ -114,7 +120,7 @@ public class Appointment {
      * @return a boolean which will be true if the objects are equal, and false otherwise.
      */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         //firstly, if the memory addresses are entirely equal, then obviously return yes...
         if (this == o) {
             return true;
@@ -132,7 +138,7 @@ public class Appointment {
         }
 
         //okay, now let's cast object to a Appointment, and check its fields...
-        Appointment otherAppointment = (Appointment) o;
+        final Appointment otherAppointment = (Appointment) o;
 
         //use the overridden hashCode method of Appointment to check for field value equality...
         if (hashCode() == otherAppointment.hashCode()) {

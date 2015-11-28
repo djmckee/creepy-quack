@@ -56,7 +56,7 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
         testAppointment.setDescription(TEST_DESCRIPTION);
 
         // Get the appointment description...
-        String description = testAppointment.getDescription();
+        final String description = testAppointment.getDescription();
 
         // Check equality
         assertEquals(TEST_DESCRIPTION, description);
@@ -72,7 +72,7 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
         testAppointment.setDate(TEST_DATE);
 
         // Get the date...
-        Date date = testAppointment.getDate();
+        final Date date = testAppointment.getDate();
 
         // Check equality
         assertEquals(TEST_DATE, date);
@@ -88,7 +88,7 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
         testAppointment.setPatient(TEST_PATIENT);
 
         // Get the appointment's associated patient...
-        Patient thePatient = testAppointment.getPatient();
+        final Patient thePatient = testAppointment.getPatient();
 
         // Check that the patient is equal...
         assertEquals(TEST_PATIENT, thePatient);
@@ -106,7 +106,7 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
         testAppointment.setPatient(TEST_PATIENT);
 
         // Create an appointment with equal values to the test appointment...
-        Appointment anotherAppointment = new Appointment();
+        final Appointment anotherAppointment = new Appointment();
         anotherAppointment.setDate(TEST_DATE);
         anotherAppointment.setDescription(TEST_DESCRIPTION);
         anotherAppointment.setPatient(TEST_PATIENT);
