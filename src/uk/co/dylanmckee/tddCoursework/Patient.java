@@ -10,7 +10,6 @@ import java.util.List;
  * Author: Dylan McKee
  * Date: 26/11/2015
  */
-@SuppressWarnings("UnclearExpression")
 public class Patient {
     /**
      * The id of the patient, to be passed and set only once in the constructor.
