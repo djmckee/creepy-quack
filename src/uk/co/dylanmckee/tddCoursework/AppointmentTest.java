@@ -8,24 +8,31 @@ import java.util.Date;
 
 import static org.junit.Assert.*;
 
+/**
+ * Purpose: A JUnit test class to test the Appointment model class for CSC2021 Test Driven Development.
+ * Author: Dylan McKee
+ * Date: 26/11/2015
+ */
 public class AppointmentTest extends AbstractLoggingJUnitTest {
-    // Some constants to use in the testing of the Appointment class' fields.
+
+    // Some constants to use in the testing of the Appointment class fields.
     private static final String TEST_DESCRIPTION = "A test appointment!";
     private static final Date TEST_DATE = new Date();
     private static final Patient TEST_PATIENT = new Patient(1);
+
     // A private instance of the Appointment to test with; to be constructed before each test in setUp, and destroyed after each test in tearDown
     private Appointment testAppointment;
 
     @Before
     public void setUp() throws Exception {
-        // Create a testing instance of Appointment
+        // Create a testing instance of Appointment before each test.
         testAppointment = new Appointment();
 
     }
 
     @After
     public void tearDown() throws Exception {
-        // Destroy the appointment
+        // Destroy the appointment after each test.
         testAppointment = null;
 
     }

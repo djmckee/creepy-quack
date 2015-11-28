@@ -9,28 +9,36 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * Purpose: A JUnit test class to test the Patient model class for CSC2021 Test Driven Development.
+ * Author: Dylan McKee
+ * Date: 26/11/2015
+ */
 public class PatientTest extends AbstractLoggingJUnitTest {
+
     // Some constants to use in the testing of the Patient class' fields.
     private static final int TEST_PATIENT_ID = 1;
     private static final String TEST_NAME = "Ringo Starr";
     private static final String TEST_ADDRESS = "1 Abbey Road, Smethwick, West Midlands B67 5RD";
     private static final String TEST_PHONE = "0800001066";
+
     // Used http://www.epochconverter.com/ to convert Ringo Starr's birthday (7th July 1940, 12 noon), from date to epoch to use Java's Date class constructor
     // The Epoch timestamp is: -930484800
     private static final Date TEST_DOB = new Date(-930484800);
+
     // A private instance of the Patient to test with; to be constructed before each test in setUp, and destroyed after each test in tearDown
     private Patient testPatient;
 
     @Before
     public void setUp() throws Exception {
-        // Instantiate a new patient object for testing
+        // Instantiate a new patient object for testing before each test is ran.
         testPatient = new Patient(TEST_PATIENT_ID);
 
     }
 
     @After
     public void tearDown() throws Exception {
-        // Destroy test patient.
+        // Destroy test patient after each test is ran.
         testPatient = null;
 
     }

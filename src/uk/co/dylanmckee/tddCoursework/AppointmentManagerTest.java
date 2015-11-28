@@ -9,6 +9,11 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * Purpose: A JUnit test class to test the AppointmentManager class for CSC2021 Test Driven Development.
+ * Author: Dylan McKee
+ * Date: 26/11/2015
+ */
 public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
     // A private instance of the AppointmentManager to test with; to be constructed before each test in setUp, and destroyed after each test in tearDown
     private AppointmentManager testAppointmentManager;
