@@ -43,7 +43,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	}
 	
 	@Test
-	public void testId() {
+	public void testIdGet() {
 		// Ensure the test ID equals the constant we intend it to...
 		assertEquals(TEST_PATIENT_ID, testPatient.getId());
 
@@ -51,7 +51,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	
 
 	@Test
-	public void testName() {
+	public void testNameSetAndGet() {
 		// Set the name...
 		testPatient.setName(TEST_NAME);
 		
@@ -63,7 +63,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	}
 	
 	@Test
-	public void testAddress() {
+	public void testAddressSetAndGet() {
 		// Set the address...
 		testPatient.setAddress(TEST_ADDRESS);
 				
@@ -76,7 +76,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	}
 	
 	@Test
-	public void testPhoneNumber() {
+	public void testPhoneNumberSetAndGet() {
 		// Set the phone number...
 		testPatient.setTelephoneNumber(TEST_PHONE);
 
@@ -90,7 +90,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	}
 
 	@Test
-	public void testDob() {
+	public void testDobSetAndGet() {
 		// Set the dob...
 		testPatient.setDob(TEST_DOB);
 
@@ -103,7 +103,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	}
 	
 	@Test
-	public void testPastAppointmentList() {
+	public void testPastAppointmentListInsertionAndRetrival() {
 		// Create a new appointment...
 		Appointment pastAppointment = new Appointment();
 		pastAppointment.setDate(new Date());

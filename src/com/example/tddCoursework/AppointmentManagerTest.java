@@ -17,7 +17,27 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
 	}
 
 	@Test
-	public void test() {
+	public void testPatientListInsertionAndRetrival() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testPatientListSearch() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testPatientNameChange() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testPatientAddressChange() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testAddNewAppointment() {
 		fail("Not yet implemented");
 	}
 
