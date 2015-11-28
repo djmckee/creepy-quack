@@ -23,22 +23,22 @@ public abstract class AbstractLoggingJUnitTest {
 	{
 		@Override
         protected void starting(Description d) {
-			AbstractLoggingJUnitTest.logger.trace("  Test [{}] starting ", d.getMethodName());
+			logger.trace("  Test [{}] starting ", d.getMethodName());
         }
 
         @Override
         protected void succeeded(Description d) {
-			AbstractLoggingJUnitTest.logger.info("  Test [{}]   succeeded ", d.getMethodName());
+			logger.info("  Test [{}]   succeeded ", d.getMethodName());
         }
 
         @Override
         protected void failed(Throwable e, Description d) {
-			AbstractLoggingJUnitTest.logger.warn("  Test [{}]   failed with exception [{}]", d.getMethodName(), e.getMessage());
+			logger.warn("  Test [{}]   failed with exception [{}]", d.getMethodName(), e.getMessage());
         }
 
         @Override
         protected void finished(Description d) {
-			AbstractLoggingJUnitTest.logger.trace("  Test [{}] finished ", d.getMethodName());
+			logger.trace("  Test [{}] finished ", d.getMethodName());
         }
 	};
 	
@@ -47,11 +47,11 @@ public abstract class AbstractLoggingJUnitTest {
 		
 		@Override
 		protected void starting(Description d) {
-			AbstractLoggingJUnitTest.logger.info("TestSuite [{}] started", d.getClassName());
+			logger.info("TestSuite [{}] started", d.getClassName());
 		}
 	    @Override
 	    protected void finished(Description d) {
-			AbstractLoggingJUnitTest.logger.info("TestSuite [{}] finished", d.getClassName());
+			logger.info("TestSuite [{}] finished", d.getClassName());
 	    }
 	};
 }

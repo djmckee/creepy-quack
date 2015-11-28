@@ -40,54 +40,54 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
     @Test
     public void testDescriptionSetAndGet() {
         // Set the appointment description...
-        testAppointment.setDescription(AppointmentTest.TEST_DESCRIPTION);
+        testAppointment.setDescription(TEST_DESCRIPTION);
 
         // Get the appointment description...
         String description = testAppointment.getDescription();
 
         // Check equality
-        assertEquals(AppointmentTest.TEST_DESCRIPTION, description);
+        assertEquals(TEST_DESCRIPTION, description);
 
     }
 
     @Test
     public void testDateSetAndGet() {
         // Set the appointment date...
-        testAppointment.setDate(AppointmentTest.TEST_DATE);
+        testAppointment.setDate(TEST_DATE);
 
         // Get the date...
         Date date = testAppointment.getDate();
 
         // Check equality
-        assertEquals(AppointmentTest.TEST_DATE, date);
+        assertEquals(TEST_DATE, date);
 
     }
 
     @Test
     public void testPatientSetAndGet() {
         // Set the appointment's associated patient...
-        testAppointment.setPatient(AppointmentTest.TEST_PATIENT);
+        testAppointment.setPatient(TEST_PATIENT);
 
         // Get the appointment's associated patient...
         Patient thePatient = testAppointment.getPatient();
 
         // Check memory reference is the same (they should be the same instance and therefore memory address - because we're using the same TEST_PATIENT instance!)
-        assertSame(AppointmentTest.TEST_PATIENT, thePatient);
+        assertSame(TEST_PATIENT, thePatient);
 
     }
 
     @Test
     public void testEquals() {
         // Set some test values for the test appointment instance, to compare to...
-        testAppointment.setDate(AppointmentTest.TEST_DATE);
-        testAppointment.setDescription(AppointmentTest.TEST_DESCRIPTION);
-        testAppointment.setPatient(AppointmentTest.TEST_PATIENT);
+        testAppointment.setDate(TEST_DATE);
+        testAppointment.setDescription(TEST_DESCRIPTION);
+        testAppointment.setPatient(TEST_PATIENT);
 
         // Create an appointment with equal values to the test appointment...
         Appointment anotherAppointment = new Appointment();
-        anotherAppointment.setDate(AppointmentTest.TEST_DATE);
-        anotherAppointment.setDescription(AppointmentTest.TEST_DESCRIPTION);
-        anotherAppointment.setPatient(AppointmentTest.TEST_PATIENT);
+        anotherAppointment.setDate(TEST_DATE);
+        anotherAppointment.setDescription(TEST_DESCRIPTION);
+        anotherAppointment.setPatient(TEST_PATIENT);
 
         assertEquals(testAppointment, anotherAppointment);
 
