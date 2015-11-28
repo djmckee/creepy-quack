@@ -7,6 +7,7 @@ import java.util.Date;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
 
 public class AppointmentTest extends AbstractLoggingJUnitTest {
 	// A private instance of the Appointment to test with; to be constructed before each test in setUp, and destroyed after each test in tearDown
@@ -76,6 +77,23 @@ public class AppointmentTest extends AbstractLoggingJUnitTest {
 		assertSame(TEST_PATIENT, thePatient);
 		
 	}
+
+    @Test
+    public void testEquals() {
+        // Set some test values for the test appointment instance, to compare to...
+        testAppointment.setDate(TEST_DATE);
+        testAppointment.setDescription(TEST_DESCRIPTION);
+        testAppointment.setPatient(TEST_PATIENT);
+
+        // Create an appointment with equal values to the test appointment...
+        Appointment anotherAppointment = new Appointment();
+        anotherAppointment.setDate(TEST_DATE);
+        anotherAppointment.setDescription(TEST_DESCRIPTION);
+        anotherAppointment.setPatient(TEST_PATIENT);
+
+        assertEquals(testAppointment, anotherAppointment);
+
+    }
 
 
 }

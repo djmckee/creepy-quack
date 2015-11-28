@@ -78,8 +78,6 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 	
 	@Test
 	public void testPhoneNumberSetAndGet() {
-        fail("Not yet implemented");
-
         // Set the phone number...
 		testPatient.setTelephoneNumber(TEST_PHONE);
 
@@ -94,8 +92,6 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 
 	@Test
 	public void testDobSetAndGet() {
-        fail("Not yet implemented");
-
         // Set the dob...
 		testPatient.setDob(TEST_DOB);
 
@@ -121,14 +117,7 @@ public class PatientTest extends AbstractLoggingJUnitTest {
 		// Ensure the list contains the added past appointment...
 		List<Appointment> appointments =  testPatient.getPastAppointments();
 		
-		boolean containsPastAppointment = false;
-		
-		for (Appointment a : appointments) {
-			// We can just check memory references; there's no copying involved here, just direct assignment so references will be preserved.
-			if (a == pastAppointment) {
-				containsPastAppointment = true;
-			}
-		}
+		boolean containsPastAppointment = appointments.contains(pastAppointment);
 		
 		// Flag bool will be set if the list contains said object.
 		assertTrue(containsPastAppointment);
