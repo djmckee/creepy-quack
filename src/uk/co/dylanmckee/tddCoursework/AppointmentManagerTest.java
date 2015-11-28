@@ -4,13 +4,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.fail;
+import java.util.Date;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
     // A private instance of the AppointmentManager to test with; to be constructed before each test in setUp, and destroyed after each test in tearDown
     private AppointmentManager testAppointmentManager;
+
+    private final int TEST_PATIENT_ID = 1;
+    private final String TEST_PATIENT_NAME = "Test McTest";
+
 
     @Before
     public void setUp() throws Exception {
@@ -42,29 +47,109 @@ public class AppointmentManagerTest extends AbstractLoggingJUnitTest {
 
     @Test
     public void testPatientListInsertionAndRetrival() {
+        Patient testPatient = new Patient(TEST_PATIENT_ID);
 
-        fail("Not yet implemented");
+        // Insert patient...
+        testAppointmentManager.addPatient(testPatient);
+
+        // Retrieve patient by ID...
+        Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+
+        // Ensure the match is the patient we added...
+        assertEquals(testPatient, match);
 
     }
 
     @Test
-    public void testPatientListSearch() {
-        fail("Not yet implemented");
+    public void testPatientListSearchByName() {
+        Patient testPatient = new Patient(TEST_PATIENT_ID);
+        testPatient.setName(TEST_PATIENT_NAME);
+
+        // Insert patient...
+        testAppointmentManager.addPatient(testPatient);
+
+        // Retrieve patient by name... (should be the first and only object in the list)
+        Patient match = testAppointmentManager.getPatientsByName(TEST_PATIENT_NAME).get(0);
+
+        // Ensure the match is the patient we added...
+        assertEquals(testPatient, match);
     }
 
     @Test
     public void testPatientNameChange() {
-        fail("Not yet implemented");
+        Patient testPatient = new Patient(TEST_PATIENT_ID);
+        testPatient.setName(TEST_PATIENT_NAME);
+
+        final String newPatientName = "John Tester-McTest";
+
+        // Insert patient...
+        testAppointmentManager.addPatient(testPatient);
+
+        // Retrieve patient by id...
+        Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+
+        // Change the name...
+        match.setName(newPatientName);
+
+        // Retrieve patient again...
+        Patient matchAgain = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+
+        // Ensure the match's name is the new name...
+        assertEquals(newPatientName, matchAgain.getName());
+
     }
 
     @Test
     public void testPatientAddressChange() {
-        fail("Not yet implemented");
+        Patient testPatient = new Patient(TEST_PATIENT_ID);
+        testPatient.setAddress("Claremont Tower, Newcastle-upon-Tyne");
+
+        final String newPatientAddress = "1 Infinite Loop, Cupertino, CA";
+
+        // Insert patient...
+        testAppointmentManager.addPatient(testPatient);
+
+        // Retrieve patient by id...
+        Patient match = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+
+        // Change the name...
+        match.setAddress(newPatientAddress);
+
+        // Retrieve patient again...
+        Patient matchAgain = testAppointmentManager.getPatientById(TEST_PATIENT_ID);
+
+        // Ensure the match's name is the new name...
+        assertEquals(newPatientAddress, matchAgain.getAddress());
+
     }
 
     @Test
     public void testAddNewAppointment() {
-        fail("Not yet implemented");
+        // Create a test appointment with test patient associated with it.
+        Appointment appointment = new Appointment();
+        appointment.setDate(new Date());
+        appointment.setDescription("A test!");
+
+        Patient patient = new Patient(TEST_PATIENT_ID);
+        patient.setName(TEST_PATIENT_NAME);
+        appointment.setPatient(patient);
+
+        // Add the test appointment!
+        testAppointmentManager.addAppointment(appointment);
+
+        // Get the appointment list, ensure it's in there...
+        List<Appointment> appointmentList = testAppointmentManager.getAppointments();
+
+        boolean appointmentAdded = false;
+
+        for (Appointment a : appointmentList) {
+            if (a.equals(appointment)) {
+                appointmentAdded = true;
+            }
+        }
+
+        assertTrue(appointmentAdded);
+
     }
 
 }
